@@ -5,7 +5,7 @@ import time
 import os
 
 # ── Config ────────────────────────────────────────────────────────────────────
-VIDEO_PATH   = os.environ.get("VIDEO_PATH", "test_video.mp4")
+VIDEO_PATH   = os.environ.get("/Users/pranshu/Downloads/test_video.mp4", "test_video.mp4")
 LOG_PATH     = "lane_detection_log.json"
 SAVE_OUTPUT  = True          # set False to skip writing output video
 OUTPUT_PATH  = "output_annotated.mp4"
