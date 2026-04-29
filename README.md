@@ -4,19 +4,6 @@ Real-time road lane detection from video using OpenCV, with per-frame JSON strea
 
 ---
 
-
-### Bugs fixed
-
-| Bug | Location | Fix |
-|---|---|---|
-| `average_slope_intercept()` had no `return` statement | line 50 | Added return of `(lines, confidence)` |
-| `make_coordinates()` integer division error: `int(y1 - intercept)/slope` | line 38 | Corrected to `int((y1 - intercept) / slope)` |
-| `combo_image` blended 1-channel gray with 3-channel line image | main loop | Both inputs to `addWeighted` are now 3-channel BGR |
-| No end-of-video guard — crashed when `vid.read()` returned `None` | main loop | Added `if not ret or frame is None: break` |
-| Lines drawn on cropped edge image instead of original frame | `display_lines` call | Canvas now matches original frame dimensions and uses BGR |
-
----
-
 ## Stream processing additions
 
 Every frame now produces a structured record:
